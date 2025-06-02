@@ -11,16 +11,25 @@ describe('CheckOut', () => {
       cy.get('.btn-outline-primary-2').eq(0).click();
       cy.get('.btn-block').eq(1).click();
       cy.wait(2000);
+      cy.get('.form-check-label').eq(1).click();
+      cy.wait(2000);
+      cy.get('.form-check-label').eq(2).click();
+      cy.wait(2000);
+      cy.get('.form-check-label').eq(0).click();
       cy.get('.form-control').eq(3).type('Sanchit Singh Narwat');
       cy.get('.form-control').eq(4).type('sanchit@annexlogics.com');
       cy.get('.form-control').eq(5).select('+91');
-      cy.get('.form-control').eq(6).type('1234567890');
+      cy.get('.form-control').eq(6).type('9875018888');
       cy.get('.custom-control-label').eq(0).click();
-      // cy.get('.form-control').eq(7).type('Sanchit#123');
-      // cy.get('.passwordeyes').click();
       cy.wait(2000);
-      // cy.get('.passwordeyes').click();
-      cy.get('#address').type('asdfghjkl/');
+      cy.get('#address').type('B-3, T C Nagar, Prithviraj Nagar (B Sector),302012');
+      cy.wait(2000);
       cy.get('#bil_country').select('India');
+      cy.wait(2000);
+      cy.get('#bil_city').type('Jaipur');
+      cy.wait(2000);
+      cy.get('#bil_state').type('Rajasthan');
+      cy.wait(2000);
+      cy.get('#place_order_btn_main').click();
     })
   })
