@@ -9,6 +9,10 @@ describe('CheckOut', () => {
       cy.wait(2000)
       cy.get('.icon-shopping-cart').click();
       cy.get('.btn-outline-primary-2').eq(0).click();
+      cy.get('#coupon_code').type('test01');
+      cy.get('.apply_coupon_btn').click();
+      cy.wait(2000);
+      cy.get('.coupon_remove').click();
       cy.get('.btn-block').eq(1).click();
       cy.wait(2000);
       cy.get('.form-check-label').eq(1).click();
@@ -30,6 +34,8 @@ describe('CheckOut', () => {
       cy.wait(2000);
       cy.get('#bil_state').type('Rajasthan');
       cy.wait(2000);
+      cy.get('#coupon_code').type('test01');
+      cy.get('.apply_coupon_btn').click();
       cy.get('#place_order_btn_main').click();
     })
   })
