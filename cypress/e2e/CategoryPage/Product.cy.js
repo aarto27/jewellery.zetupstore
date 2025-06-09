@@ -2,11 +2,11 @@ describe('Product', () => {
     it('Product', () => {
       cy.visit('https://jewellery.zetupstore.com/');
       cy.wait(2000);
-      cy.get('.border-bottom-0').eq(0).click();
+      cy.get('.border-bottom-0').eq(3).click();
       cy.wait(2000);
-      cy.get('.border-bottom-0').eq(1).click();
+      cy.get('.border-bottom-0').eq(4).click();
       cy.wait(2000);
-      cy.get('.border-bottom-0').eq(2).click();
+      cy.get('.border-bottom-0').eq(5).click();
       cy.wait(2000);
       cy.get('.product-4').eq(0).trigger('mouseover').then(($el) => {
         cy.wrap($el)

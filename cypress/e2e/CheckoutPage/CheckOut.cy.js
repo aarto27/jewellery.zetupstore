@@ -3,8 +3,8 @@ describe('CheckOut', () => {
       cy.visit('https://jewellery.zetupstore.com/');
       cy.get('.border-bottom-0').eq(0).click();
       cy.wait(2000)
-      cy.get('.product-body').find('.product-title').eq(1).click();
-      cy.wait(2000)
+      // cy.get('.product-body').find('.product-title').eq(1).click();
+      // cy.wait(2000)
       cy.get('#btn-cart').click();
       cy.wait(2000)
       cy.get('.icon-shopping-cart').click();
@@ -13,7 +13,8 @@ describe('CheckOut', () => {
       cy.get('.apply_coupon_btn').click();
       cy.wait(2000);
       cy.get('.coupon_remove').click();
-      cy.get('.btn-block').eq(1).click();
+      cy.get('.summary-cart').find('.btn-full-width').click({ force: true });
+      cy.visit('https://jewellery.zetupstore.com/checkout');
       cy.wait(2000);
       cy.get('.form-check-label').eq(1).click();
       cy.wait(2000);
@@ -34,8 +35,11 @@ describe('CheckOut', () => {
       cy.wait(2000);
       cy.get('#bil_state').type('Rajasthan');
       cy.wait(2000);
+      cy.get('#zipcode').type('302012');
       cy.get('#coupon_code').type('test01');
-      cy.get('.apply_coupon_btn').click();
+      cy.get('.apply_coupon_btn').eq(0).click();
       cy.get('#place_order_btn_main').click();
+      cy.wait(2000);
+      cy.get('.breadcrumb-item').eq(0).click();
     })
   })
